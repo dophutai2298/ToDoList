@@ -3,10 +3,23 @@
   margin-left: 20%;
   min-height: 300px;
   background: bg("white");
+  @include MediaQuery($sm) {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  @include MediaQuery($xs) {
+    width: 90%;
+    margin-left: 5%;
+  }
   &__section {
     width: 80%;
     margin-left: 10%;
     padding: 5%;
+    @include MediaQuery($xs) {
+      width: 90%;
+      margin-left: 5%;
+    }
     &--list {
       padding: 10%;
       box-shadow: 0 0 20px 0px bg("black");
@@ -19,6 +32,9 @@
         h3 {
           text-align: center;
           @include text(text("secondary"), $h1, $fwBold);
+          @include MediaQuery($sm) {
+            font-size: $h3;
+          }
         }
       }
       .task__title--time {
@@ -27,8 +43,8 @@
           width: 50%;
           span {
             @include text(text("primary"), $h3, $fwBold);
-            @include MediaQuery($sm){
-              font-size: $h5;
+            @include MediaQuery($sm) {
+              font-size: 70%;
             }
           }
           .task--timeNow {
@@ -42,11 +58,17 @@
             -moz-border-radius: 3px;
             -ms-border-radius: 3px;
             -o-border-radius: 3px;
-            @include MediaQuery($sm){
-              @include text(text("white"), $h5, $fwBold);
-            width: 25px;
-            height: 25px;
-            padding: 1px;
+            @include MediaQuery($sm) {
+              font-size: 80%;
+              width: 25px;
+              height: 25px;
+              padding: 1px;
+            }
+            @include MediaQuery($xs) {
+              font-size: 70%;
+              width: 20px;
+              height: 20px;
+              padding: 1px;
             }
           }
         }
@@ -55,15 +77,28 @@
           text-align: right;
           span {
             @include text(text("secondary"), $h4, $fwMedium);
+            @include MediaQuery($sm) {
+              font-size: 75%;
+            }
           }
         }
       }
       .task__title--input {
         margin-top: 20px;
         text-align: right;
+        @include MediaQuery($sm) {
+          margin-top: 5px;
+          @include MediaQuery($xs) {
+            .btn {
+              padding: 2px;
+              font-size: 70%;
+            }
+          }
+        }
       }
       .task__section--work {
         margin-top: 5px;
+
         p {
           text-align: center;
           margin: 0;
@@ -89,6 +124,9 @@
             span {
               margin-left: 5px;
               @include text(text("primary"), $h4, $fwMedium);
+              @include MediaQuery($sm) {
+                font-size: 80%;
+              }
             }
           }
           .task__work--btn {
@@ -101,19 +139,25 @@
           }
         }
       }
+
       .task__section--workDone {
         margin-top: 30px;
         padding-top: 20px;
+        @include MediaQuery($sm) {
+          padding-top: 10px;
+        }
         border-top: 1px solid bg("black");
         filter: brightness(90%);
         -webkit-filter: brightness(90%);
         text-align: center;
       }
-      .task__section--workDone::before{
+      .task__section--workDone::before {
         content: "Task Completed";
         @include text(text("primary"), $h4, $fwMedium);
         text-align: center;
-
+        @include MediaQuery($sm) {
+          font-size: $h5;
+        }
       }
     }
   }

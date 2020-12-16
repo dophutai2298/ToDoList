@@ -16,10 +16,32 @@ body {
   background: #f1f1f1;
 }
 
+@media screen and (max-width: 768px) {
+  .task {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .task {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
 .task__section {
   width: 80%;
   margin-left: 10%;
   padding: 5%;
+}
+
+@media screen and (max-width: 576px) {
+  .task__section {
+    width: 90%;
+    margin-left: 5%;
+  }
 }
 
 .task__section--list {
@@ -37,6 +59,12 @@ body {
   color: #1c191a;
   font-size: 32px;
   font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .task__section--list .task__section--title h3 {
+    font-size: 20px;
+  }
 }
 
 .task__section--list .task__title--time {
@@ -57,7 +85,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .task__section--list .task__title--time .task--time span {
-    font-size: 14px;
+    font-size: 70%;
   }
 }
 
@@ -78,11 +106,18 @@ body {
 
 @media screen and (max-width: 768px) {
   .task__section--list .task__title--time .task--time .task--timeNow {
-    color: #fee9f0;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 80%;
     width: 25px;
     height: 25px;
+    padding: 1px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .task__section--list .task__title--time .task--time .task--timeNow {
+    font-size: 70%;
+    width: 20px;
+    height: 20px;
     padding: 1px;
   }
 }
@@ -98,9 +133,28 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .task__section--list .task__title--time .task--day span {
+    font-size: 75%;
+  }
+}
+
 .task__section--list .task__title--input {
   margin-top: 20px;
   text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .task__section--list .task__title--input {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-width: 576px) {
+  .task__section--list .task__title--input .btn {
+    padding: 2px;
+    font-size: 70%;
+  }
 }
 
 .task__section--list .task__section--work {
@@ -146,6 +200,12 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .task__section--list .task__section--work .task__work--detail .task__work--name span {
+    font-size: 80%;
+  }
+}
+
 .task__section--list .task__section--work .task__work--detail .task__work--btn .btnSystem {
   color: #83787c;
   font-size: 16px;
@@ -164,11 +224,23 @@ body {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .task__section--list .task__section--workDone {
+    padding-top: 10px;
+  }
+}
+
 .task__section--list .task__section--workDone::before {
   content: "Task Completed";
   color: #83787c;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .task__section--list .task__section--workDone::before {
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
