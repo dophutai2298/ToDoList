@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Tasks</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="task">
+      <div class="task__section">
+        <div class="task__section--list">
+          <div class="task__section--img">
+            <img src="./images/9sinmtfqdcy11.jpg" alt="" />
+          </div>
+          <div class="task__section--title">
+            <h3>My Tasks</h3>
+            <div class="task__title--time">
+              <div class="task--time">
+                <span id="hour" class="task--timeNow"></span>
+                <span>:</span>
+                <span id="minute" class="task--timeNow"></span>
+                <span>:</span>
+                <span id="second" class="task--timeNow"></span>
+              </div>
+              <div class="task--day">
+                <span id="day"></span>
+                <span>/</span>
+                <span id="month"></span>
+                <span>/</span>
+                <span id="year"></span>
+              </div>
+            </div>
+            <div class="task__title--input">
+              <!-- Button trigger modal -->
+              <button
+                id="btnOpenForm"
+                type="button"
+                class="btn btn-primary mb-3"
+                data-toggle="modal"
+                data-target="#inputForm"
+              >
+                Add work
+              </button>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="inputForm"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">My Tasks</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                    style="outline: none"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-id-card"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="txtId"
+                          type="text"
+                          class="form-control"
+                          placeholder="Id"
+                          aria-label="Username"
+                          aria-describedby="basic-addon1"
+                        />
+                      </div>
+                      <span
+                        id="txtNotifyId"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-user-circle"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="txtTitle"
+                          type="text"
+                          class="form-control"
+                          placeholder="Title"
+                          aria-label="Username"
+                          aria-describedby="basic-addon1"
+                        />
+                      </div>
+                      <span
+                        id="txtNotifyTitle"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-align-center"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="txtContent"
+                          type="text"
+                          class="form-control"
+                          placeholder="Content"
+                          aria-label="Username"
+                          aria-describedby="basic-addon1"
+                        />
+                      </div>
+                      <span
+                        id="txtNotifyContent"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-calendar"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="txtDate"
+                          type="datetime-local"
+                          class="form-control"
+                          placeholder="Date"
+                          aria-label="Username"
+                          aria-describedby="basic-addon1"
+                        />
+                      </div>
+                      <span
+                        id="txtNotifyDate"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </div>
+                    <button type="reset" class="d-none" id="btnReset">
+                      Reset
+                    </button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    id="closeForm"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button id="addTask" type="button" class="btn btn-primary">
+                    Add
+                  </button>
+                  <button
+                    id="updateTask"
+                    type="button"
+                    class="btn btn-warning"
+                    style="display: none"
+                  >
+                    Update
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End Modal -->
+          <!-- List task -->
+
+          <div class="task__section--work" id="outputTask">
+         
+          </div>
+          <!-- List task -->
+          <!-- List done -->
+         
+          <div
+            class="task__section--workDone task__section--work"
+            id="taskComplete"
+          >  
+        </div>
+          <!-- List done -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./models/task.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

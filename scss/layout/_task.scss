@@ -1,0 +1,120 @@
+.task {
+  width: 60%;
+  margin-left: 20%;
+  min-height: 300px;
+  background: bg("white");
+  &__section {
+    width: 80%;
+    margin-left: 10%;
+    padding: 5%;
+    &--list {
+      padding: 10%;
+      box-shadow: 0 0 20px 0px bg("black");
+      .task__section--img {
+        img {
+          width: 100%;
+        }
+      }
+      .task__section--title {
+        h3 {
+          text-align: center;
+          @include text(text("secondary"), $h1, $fwBold);
+        }
+      }
+      .task__title--time {
+        display: flex;
+        .task--time {
+          width: 50%;
+          span {
+            @include text(text("primary"), $h3, $fwBold);
+            @include MediaQuery($sm){
+              font-size: $h5;
+            }
+          }
+          .task--timeNow {
+            @include text(text("white"), $h3, $fwBold);
+            width: 35px;
+            height: 35px;
+            padding: 3px;
+            background: bg("pink");
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            @include MediaQuery($sm){
+              @include text(text("white"), $h5, $fwBold);
+            width: 25px;
+            height: 25px;
+            padding: 1px;
+            }
+          }
+        }
+        .task--day {
+          width: 50%;
+          text-align: right;
+          span {
+            @include text(text("secondary"), $h4, $fwMedium);
+          }
+        }
+      }
+      .task__title--input {
+        margin-top: 20px;
+        text-align: right;
+      }
+      .task__section--work {
+        margin-top: 5px;
+        p {
+          text-align: center;
+          margin: 0;
+          margin-bottom: 5px;
+          @include text(text("secondary"), $h4, $fwMedium);
+        }
+        .task__work--detail {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 2px;
+          width: 90%;
+          margin-left: 5%;
+          background: bg("white2");
+          border: 1px solid bg("pink");
+          border-radius: 3px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          -o-border-radius: 3px;
+          .task__work--name {
+            span {
+              margin-left: 5px;
+              @include text(text("primary"), $h4, $fwMedium);
+            }
+          }
+          .task__work--btn {
+            .btnSystem {
+              @include text(text("primary"), $h4, $fwMedium);
+              border: none;
+              background: transparent;
+              outline: none;
+            }
+          }
+        }
+      }
+      .task__section--workDone {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid bg("black");
+        filter: brightness(90%);
+        -webkit-filter: brightness(90%);
+        text-align: center;
+      }
+      .task__section--workDone::before{
+        content: "Task Completed";
+        @include text(text("primary"), $h4, $fwMedium);
+        text-align: center;
+
+      }
+    }
+  }
+}
